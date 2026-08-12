@@ -88,7 +88,7 @@ export function PcRepairSection({
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:gap-14 lg:px-8">
+      <div className="site-shell relative grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
         {/* Text — 5 cols */}
         <motion.div
           className="order-2 lg:order-1 lg:col-span-5"

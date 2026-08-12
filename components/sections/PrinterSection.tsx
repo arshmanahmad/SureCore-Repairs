@@ -81,7 +81,7 @@ export function PrinterSection({
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:gap-14 lg:px-8">
+      <div className="site-shell relative grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
         {/* Image — 7 cols, left */}
         <motion.div
           className="lg:col-span-7"

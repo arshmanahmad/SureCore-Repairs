@@ -34,7 +34,7 @@ export function CTA() {
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <div className="site-shell relative max-w-[1100px] text-center">
         <MotionDiv>
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-light">
             Book a service

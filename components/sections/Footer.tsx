@@ -40,7 +40,7 @@ const PHONE_CONTACTS: { id: ContactId; note: string }[] = [
 export function Footer() {
   return (
     <footer className="border-t border-white/10 bg-dark pb-24 text-zinc-400 sm:pb-16">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="site-shell py-16">
         <MotionDiv className="grid gap-12 lg:grid-cols-[1.4fr_repeat(2,1fr)_1.2fr]">
           <div>
             <Logo theme="dark" />

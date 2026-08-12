@@ -40,6 +40,32 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Wider content shell — less empty left/right space on large screens & zoomed views */
+.site-shell {
+  width: 100%;
+  max-width: min(96vw, 1680px);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+  .site-shell {
+    padding-inline: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-shell {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .site-shell {
+    padding-inline: 1.75rem;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);

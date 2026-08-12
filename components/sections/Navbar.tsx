@@ -92,7 +92,7 @@ export function Navbar() {
         />
       ) : null}
 
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
+      <div className="site-shell flex items-center justify-between gap-3">
         <Logo theme={scrolled ? "light" : "dark"} />
 
         <nav className="hidden items-center gap-0.5 xl:flex" aria-label="Primary">

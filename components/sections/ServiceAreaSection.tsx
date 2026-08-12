@@ -35,7 +35,7 @@ export function ServiceAreaSection() {
         }}
       />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
+      <div className="site-shell relative grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <MotionDiv>
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-light">
             Service Area
