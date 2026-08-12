@@ -112,6 +112,25 @@ export function Footer() {
           </p>
           <p className="text-zinc-500">Printer Repair · Laptop Repair · Solar &amp; Inverter</p>
         </div>
+
+        <p className="mt-8 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-4 text-center text-sm tracking-wide text-zinc-300 sm:text-base">
+          Website developed by{" "}
+          <span className="font-semibold text-white">Arshman Ahmad</span>
+          <span className="mx-2 text-zinc-500" aria-hidden>
+            ·
+          </span>
+          Contact:{" "}
+          <a
+            href="tel:+923294494502"
+            className="font-semibold text-brand-light transition-colors hover:text-white"
+          >
+            0329 4494502
+          </a>
+          <span className="mx-2 text-zinc-500" aria-hidden>
+            ·
+          </span>
+          <span className="font-medium text-zinc-200">© 2026</span>
+        </p>
       </div>
     </footer>
   );
