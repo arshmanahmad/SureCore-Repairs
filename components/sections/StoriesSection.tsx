@@ -9,60 +9,80 @@ import { serviceImages, WHATSAPP_MESSAGES } from "./config";
 const STORIES = [
   {
     id: "printer",
-    tab: "Printer",
+    tab: "Printer Repair",
     href: "#printer-repair",
-    accent: "from-cyan to-teal-400",
-    ring: "ring-cyan/40",
+    accent: "from-brand to-brand-light",
+    ring: "ring-brand/40",
     problem: {
-      title: "Office printer jammed mid-day",
-      text: "Important documents stuck. Staff waiting. Printing stopped at the worst moment.",
+      title: "Printer stopped working",
+      text: "Paper stuck, blank pages, or error lights — work piles up and printing stops.",
     },
     solution: {
-      title: "On-site printer repair",
-      text: "We visited the office, cleared the fault, and restored printing quickly.",
+      title: "Complete printer repair",
+      text: "We check the full printer, fix the fault, and get your documents printing again.",
     },
-    result: "Printer running — office back to normal.",
+    result: "Your printer is ready for everyday home or office use.",
     video: "/videos/story-printer.mp4",
     poster: serviceImages.printer,
     contact: "asmeer" as const,
     whatsappMessage: WHATSAPP_MESSAGES.printer,
   },
   {
-    id: "pc",
-    tab: "PC & Laptop",
+    id: "laptop",
+    tab: "Laptop Repair",
     href: "#pc-repair",
-    accent: "from-indigo to-purple",
-    ring: "ring-indigo/40",
+    accent: "from-brand-dark to-brand",
+    ring: "ring-brand-light/40",
     problem: {
-      title: "Laptop suddenly died",
-      text: "Work and studies stopped. Blank screen. Panic. No idea what to do next.",
+      title: "Laptop suddenly failed",
+      text: "Blank screen, slow performance, or no power — study and work come to a halt.",
     },
     solution: {
-      title: "Expert checkup & repair",
-      text: "We found the fault, explained the fix in plain words, and repaired it the same day.",
+      title: "Clear checkup & repair",
+      text: "We find the issue, explain the fix in simple words, and repair it carefully.",
     },
-    result: "Working again — files safe, deadline met.",
-    video: "/videos/story-pc.mp4",
+    result: "Laptop working again — files safe and ready for use.",
+    video: "/videos/story-laptop.mp4",
     poster: serviceImages.pc,
     contact: "ahsan" as const,
     whatsappMessage: WHATSAPP_MESSAGES.pc,
   },
   {
-    id: "solar",
-    tab: "Solar",
+    id: "inverter",
+    tab: "Solar Inverter",
     href: "#solar",
-    accent: "from-emerald-500 to-cyan",
+    accent: "from-emerald-600 to-brand",
     ring: "ring-emerald-400/40",
     problem: {
-      title: "Electricity bill kept rising",
-      text: "Monthly costs felt out of control. No clear plan to reduce them.",
+      title: "Solar inverter not working",
+      text: "Power cuts feel worse when the inverter trips, beeps, or stops charging.",
     },
     solution: {
-      title: "Solar survey & installation",
-      text: "We surveyed the site, explained options simply, and installed a system that fits the budget.",
+      title: "Inverter inspection & repair",
+      text: "We inspect the inverter unit, diagnose the fault, and restore reliable backup power.",
     },
-    result: "Lower bills — cleaner, more reliable power.",
-    video: "/videos/story-solar.mp4",
+    result: "Inverter running smoothly — backup power you can trust.",
+    video: "/videos/story-inverter.mp4",
+    poster: serviceImages.inverter,
+    contact: "asmeer" as const,
+    whatsappMessage: WHATSAPP_MESSAGES.inverter,
+  },
+  {
+    id: "solar-panel",
+    tab: "Solar Panels",
+    href: "#solar",
+    accent: "from-emerald-500 to-brand-light",
+    ring: "ring-emerald-400/40",
+    problem: {
+      title: "Electricity bills keep rising",
+      text: "Monthly costs feel out of control, with no clear plan to reduce them.",
+    },
+    solution: {
+      title: "Solar panel installation",
+      text: "We survey your site, explain options simply, and install panels that fit your needs.",
+    },
+    result: "Lower bills and cleaner, more reliable power for your home or business.",
+    video: "/videos/story-solar-panel.mp4",
     poster: serviceImages.solar,
     contact: "asmeer" as const,
     whatsappMessage: WHATSAPP_MESSAGES.solar,
@@ -83,7 +103,6 @@ export function StoriesSection() {
     });
   }, [active]);
 
-  // Gentle auto-rotate between stories
   useEffect(() => {
     const id = window.setInterval(() => {
       setActive((i) => (i + 1) % STORIES.length);
@@ -92,8 +111,8 @@ export function StoriesSection() {
   }, []);
 
   return (
-    <section id="stories" className="relative overflow-hidden bg-dark py-20 sm:py-24">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.2),transparent_55%)]" />
+    <section id="services" className="relative overflow-hidden bg-dark py-20 sm:py-24">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(26,102,224,0.22),transparent_55%)]" />
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-[0.05]"
@@ -106,32 +125,31 @@ export function StoriesSection() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <MotionDiv className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan">
-            Real Problems. Real Fixes.
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-light">
+            Our Services
           </p>
-          <h2 className="mt-3 text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-5xl">
-            From stress to{" "}
-            <span className="bg-gradient-to-r from-indigo to-cyan bg-clip-text text-transparent">
-              solved
+          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+            See how we help —{" "}
+            <span className="bg-gradient-to-r from-brand-light to-white bg-clip-text text-transparent">
+              in under a minute
             </span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-zinc-400 sm:text-lg">
-            Watch how AB Computer Technologies turns everyday Multan problems into clear results —
-            one service at a time.
+            Four short clips showing printer repair, laptop repair, solar inverter repair, and
+            solar panel installation. Pick the service that matches your need.
           </p>
         </MotionDiv>
 
-        {/* Service tabs */}
-        <MotionDiv delay={0.08} className="mt-10 flex flex-wrap justify-center gap-3">
+        <MotionDiv delay={0.08} className="mt-10 flex flex-wrap justify-center gap-2.5 sm:gap-3">
           {STORIES.map((item, index) => (
             <button
               key={item.id}
               type="button"
               onClick={() => setActive(index)}
-              className={`min-h-12 rounded-full px-5 text-sm font-semibold transition-all duration-200 ${
+              className={`min-h-11 rounded-full px-4 text-sm font-semibold transition-all duration-200 sm:min-h-12 sm:px-5 ${
                 active === index
-                  ? `bg-gradient-to-r ${item.accent} text-white shadow-lg shadow-indigo/30 scale-105`
-                  : "border border-white/15 bg-white/5 text-zinc-300 hover:border-cyan/40 hover:text-white"
+                  ? `bg-gradient-to-r ${item.accent} scale-[1.02] text-white shadow-lg shadow-brand/30`
+                  : "border border-white/15 bg-white/5 text-zinc-300 hover:border-brand-light/40 hover:text-white"
               }`}
             >
               {item.tab}
@@ -140,7 +158,6 @@ export function StoriesSection() {
         </MotionDiv>
 
         <div className="mt-10 grid items-center gap-8 lg:grid-cols-12 lg:gap-12">
-          {/* Video stage */}
           <MotionDiv className="lg:col-span-7">
             <AnimatePresence mode="wait">
               <motion.div
@@ -149,7 +166,7 @@ export function StoriesSection() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.4 }}
-                className={`relative overflow-hidden rounded-3xl border border-white/15 bg-black shadow-2xl shadow-indigo/20 ring-1 ${story.ring}`}
+                className={`relative overflow-hidden rounded-3xl border border-white/15 bg-black shadow-2xl shadow-brand/20 ring-1 ${story.ring}`}
               >
                 <div className="relative aspect-[16/10]">
                   <video
@@ -161,6 +178,7 @@ export function StoriesSection() {
                     playsInline
                     autoPlay
                     preload="metadata"
+                    aria-label={`${story.tab} service video`}
                   >
                     <source src={story.video} type="video/mp4" />
                   </video>
@@ -171,7 +189,7 @@ export function StoriesSection() {
                       <span className="absolute inset-0 animate-ping rounded-full bg-rose-400/70" />
                       <span className="relative h-2 w-2 rounded-full bg-rose-400" />
                     </span>
-                    Short story clip
+                    {story.tab}
                   </div>
 
                   <div className="absolute bottom-4 left-4 right-4">
@@ -182,7 +200,6 @@ export function StoriesSection() {
             </AnimatePresence>
           </MotionDiv>
 
-          {/* Problem → Solution → Result */}
           <div className="lg:col-span-5">
             <AnimatePresence mode="wait">
               <motion.div
@@ -204,8 +221,8 @@ export function StoriesSection() {
                   <span className={`h-8 w-0.5 rounded-full bg-gradient-to-b ${story.accent}`} />
                 </div>
                 <Step
-                  label="Solution"
-                  tone="text-cyan"
+                  label="What we do"
+                  tone="text-brand-light"
                   title={story.solution.title}
                   text={story.solution.text}
                   delay={0.08}
@@ -217,16 +234,16 @@ export function StoriesSection() {
                   label="Result"
                   tone="text-emerald-400"
                   title={story.result}
-                  text="Clear outcome our Multan customers care about — less stress, more confidence."
+                  text="Simple outcome you can understand — less stress, equipment working again."
                   delay={0.16}
                 />
 
                 <div className="mt-4 flex flex-wrap items-center gap-3">
                   <a
                     href={story.href}
-                    className={`inline-flex min-h-12 items-center gap-2 rounded-full bg-gradient-to-r ${story.accent} px-7 text-sm font-semibold text-white shadow-lg shadow-indigo/30 transition-all duration-200 hover:scale-105`}
+                    className={`inline-flex min-h-12 items-center gap-2 rounded-full bg-gradient-to-r ${story.accent} px-7 text-sm font-semibold text-white shadow-lg shadow-brand/30 transition-all duration-200 hover:scale-105`}
                   >
-                    See {story.tab} service
+                    Learn about {story.tab}
                     <span aria-hidden>→</span>
                   </a>
                   <WhatsAppLink contact={story.contact} message={story.whatsappMessage} />
@@ -236,16 +253,15 @@ export function StoriesSection() {
           </div>
         </div>
 
-        {/* Progress dots */}
         <div className="mt-10 flex justify-center gap-2">
           {STORIES.map((item, index) => (
             <button
               key={item.id}
               type="button"
-              aria-label={`Show ${item.tab} story`}
+              aria-label={`Show ${item.tab} video`}
               onClick={() => setActive(index)}
               className={`h-2.5 rounded-full transition-all duration-300 ${
-                active === index ? "w-8 bg-cyan" : "w-2.5 bg-white/25 hover:bg-white/50"
+                active === index ? "w-8 bg-brand-light" : "w-2.5 bg-white/25 hover:bg-white/50"
               }`}
             />
           ))}

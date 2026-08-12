@@ -24,7 +24,7 @@ const COVERAGE = [
 export function ServiceAreaSection() {
   return (
     <section id="service-area" className="relative overflow-hidden bg-dark-alt py-20 sm:py-24">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.18),transparent_60%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(26,102,224,0.18),transparent_60%)]" />
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-[0.06]"
@@ -37,18 +37,19 @@ export function ServiceAreaSection() {
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <MotionDiv>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-light">
             Service Area
           </p>
-          <h2 className="mt-3 text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-5xl">
+          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
             We serve{" "}
-            <span className="bg-gradient-to-r from-indigo to-cyan bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand-light to-white bg-clip-text text-transparent">
               Multan
             </span>
           </h2>
           <p className="mt-4 max-w-lg text-base leading-relaxed text-zinc-400 sm:text-lg">
             Local, reachable, and easy to book. AB Computer Technologies provides home and office
-            visits across Multan, Punjab, Pakistan — so help feels close when you need it.
+            visits across Multan — so help feels close when your printer, laptop, or solar system
+            needs attention.
           </p>
 
           <ul className="mt-8 space-y-4">
@@ -65,7 +66,7 @@ export function ServiceAreaSection() {
 
           <a
             href="#contact"
-            className="mt-10 inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-r from-indigo to-cyan px-8 text-sm font-semibold text-white shadow-lg shadow-indigo/35 transition-all duration-200 hover:scale-105 hover:shadow-xl hover:shadow-cyan/35"
+            className="mt-10 inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-light px-8 text-sm font-semibold text-white shadow-lg shadow-brand/35 transition-all duration-200 hover:scale-105 hover:shadow-xl hover:shadow-brand-light/35"
           >
             Book a Home / Office Visit
           </a>
@@ -73,12 +74,12 @@ export function ServiceAreaSection() {
 
         <MotionDiv delay={0.12}>
           <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-white/5 p-6 backdrop-blur-md sm:p-8">
-            <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-cyan/20 blur-3xl" />
-            <div className="absolute -bottom-12 -left-8 h-44 w-44 rounded-full bg-indigo/25 blur-3xl" />
+            <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-brand-light/20 blur-3xl" />
+            <div className="absolute -bottom-12 -left-8 h-44 w-44 rounded-full bg-brand/25 blur-3xl" />
 
             <div className="relative">
               <div className="flex items-start gap-4">
-                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo to-cyan text-white shadow-lg shadow-indigo/30">
+                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand to-brand-light text-white shadow-lg shadow-brand/30">
                   <PinIcon />
                 </span>
                 <div>
@@ -114,7 +115,7 @@ export function ServiceAreaSection() {
                           Serving homes &amp; offices across the city
                         </p>
                       </div>
-                      <span className="rounded-full border border-white/25 bg-dark/70 px-3 py-1.5 text-[11px] font-semibold text-cyan backdrop-blur-md transition-colors group-hover:border-cyan/50 group-hover:text-white">
+                      <span className="rounded-full border border-white/25 bg-dark/70 px-3 py-1.5 text-[11px] font-semibold text-brand-light backdrop-blur-md transition-colors group-hover:border-brand-light/50 group-hover:text-white">
                         Open map
                       </span>
                     </div>
@@ -124,7 +125,7 @@ export function ServiceAreaSection() {
 
               <p className="mt-5 text-sm text-zinc-400">
                 Outside Multan?{" "}
-                <a href="#faq" className="font-medium text-cyan hover:underline">
+                <a href="#faq" className="font-medium text-brand-light hover:underline">
                   Ask us in FAQ
                 </a>{" "}
                 — we can advise case by case.

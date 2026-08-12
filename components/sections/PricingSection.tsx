@@ -18,7 +18,7 @@ const PLANS = [
       "Jam, error & connectivity check",
       "Transparent repair quote",
     ],
-    accent: "from-cyan to-indigo",
+    accent: "from-brand to-brand-light",
     featured: true,
     contact: "asmeer" as ContactId,
     whatsappMessage: WHATSAPP_MESSAGES.printer,
@@ -35,23 +35,23 @@ const PLANS = [
       "Clear estimate before repair",
       "Home or workshop options",
     ],
-    accent: "from-indigo to-purple",
+    accent: "from-brand-dark to-brand",
     contact: "ahsan" as ContactId,
     whatsappMessage: WHATSAPP_MESSAGES.pc,
   },
   {
     id: "solar",
-    title: "Solar Survey / Consultation",
-    service: "Solar Installation",
+    title: "Solar Survey / Inverter Check",
+    service: "Solar & Inverter",
     href: "#solar",
     price: "Rs. 500",
     note: "Starting from — final price depends on system size & install",
     points: [
       "Site survey for your home/office",
-      "Simple savings explanation",
-      "Custom installation plan",
+      "Inverter checkup when needed",
+      "Simple savings & installation plan",
     ],
-    accent: "from-emerald-500 to-cyan",
+    accent: "from-emerald-600 to-brand",
     contact: "asmeer" as ContactId,
     whatsappMessage: WHATSAPP_MESSAGES.solar,
   },
@@ -62,19 +62,19 @@ export function PricingSection() {
     <section id="pricing" className="relative bg-white py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <MotionDiv className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-indigo">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
             Transparent Pricing
           </p>
-          <h2 className="mt-3 text-3xl font-black tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            Service charges{" "}
-            <span className="bg-gradient-to-r from-indigo to-cyan bg-clip-text text-transparent">
+          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+            Choose a service —{" "}
+            <span className="bg-gradient-to-r from-brand to-brand-light bg-clip-text text-transparent">
               from Rs. 500
             </span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
             Every price below is a <strong className="font-semibold text-foreground">starting
-            price</strong> — not a fixed or maximum rate. The final amount depends on the problem,
-            parts, and service complexity.
+            price</strong> — not a fixed or maximum rate. Final cost depends on the problem,
+            parts, and work needed. You get a clear estimate first.
           </p>
         </MotionDiv>
 
@@ -86,12 +86,12 @@ export function PricingSection() {
                 transition={{ duration: 0.25 }}
                 className={`relative flex h-full flex-col rounded-3xl border p-7 shadow-xl transition-shadow duration-300 hover:shadow-2xl ${
                   plan.featured
-                    ? "border-indigo/30 bg-gradient-to-b from-indigo/5 to-white shadow-indigo/10"
+                    ? "border-brand/30 bg-gradient-to-b from-brand/5 to-white shadow-brand/10"
                     : "border-gray-100 bg-white shadow-zinc-200/50"
                 }`}
               >
                 {plan.featured ? (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-indigo to-cyan px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-brand to-brand-light px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
                     Most booked
                   </span>
                 ) : null}
@@ -116,7 +116,7 @@ export function PricingSection() {
                 <ul className="mt-6 flex-1 space-y-3">
                   {plan.points.map((point) => (
                     <li key={point} className="flex items-start gap-2.5 text-sm text-zinc-600">
-                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-indigo/10 text-indigo">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand">
                         <CheckIcon />
                       </span>
                       {point}
@@ -129,11 +129,11 @@ export function PricingSection() {
                     href="#contact"
                     className={`inline-flex min-h-12 items-center justify-center rounded-full px-6 text-sm font-semibold transition-all duration-200 hover:scale-105 ${
                       plan.featured
-                        ? "bg-gradient-to-r from-indigo to-cyan text-white shadow-lg shadow-indigo/30 hover:shadow-xl hover:shadow-cyan/30"
-                        : "border border-indigo/30 text-indigo hover:bg-indigo hover:text-white"
+                        ? "bg-gradient-to-r from-brand to-brand-light text-white shadow-lg shadow-brand/30 hover:shadow-xl hover:shadow-brand-light/30"
+                        : "border border-brand/30 text-brand hover:bg-brand hover:text-white"
                     }`}
                   >
-                    Book a Service →
+                    Book this service →
                   </a>
                   <WhatsAppLink
                     contact={plan.contact}

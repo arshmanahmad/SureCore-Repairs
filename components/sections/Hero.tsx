@@ -4,7 +4,7 @@ import { useRef, type MouseEvent } from "react";
 import Image from "next/image";
 import { motion, useMotionTemplate, useMotionValue, useSpring } from "framer-motion";
 import { MotionDiv } from "@/components/ui/MotionDiv";
-import { OFFERED_SERVICES } from "./config";
+import { BRAND, OFFERED_SERVICES } from "./config";
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -12,7 +12,7 @@ export function Hero() {
   const mouseY = useMotionValue(0);
   const springX = useSpring(mouseX, { stiffness: 40, damping: 20 });
   const springY = useSpring(mouseY, { stiffness: 40, damping: 20 });
-  const glow = useMotionTemplate`radial-gradient(600px circle at ${springX}px ${springY}px, rgba(99,102,241,0.22), transparent 55%)`;
+  const glow = useMotionTemplate`radial-gradient(600px circle at ${springX}px ${springY}px, rgba(26,102,224,0.24), transparent 55%)`;
 
   const onMove = (e: MouseEvent<HTMLElement>) => {
     const rect = ref.current?.getBoundingClientRect();
@@ -29,7 +29,7 @@ export function Hero() {
       className="relative min-h-[100svh] overflow-hidden bg-dark text-zinc-200"
     >
       <motion.div className="pointer-events-none absolute inset-0" style={{ background: glow }} />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(139,92,246,0.18),transparent_55%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(26,102,224,0.2),transparent_55%)]" />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:72px_72px] [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_70%)]" />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 pb-20 pt-32 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:pt-36">
@@ -40,24 +40,27 @@ export function Hero() {
                 <span className="absolute inset-0 rounded-full bg-emerald-400 animate-pulse-dot" />
                 <span className="relative h-2 w-2 rounded-full bg-emerald-400" />
               </span>
-              Three Services. One Trusted Team.
+              Serving homes &amp; businesses in Multan
             </div>
           </MotionDiv>
 
           <MotionDiv delay={0.08}>
-            <h1 className="mt-6 text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Printer Repair, PC Repair &amp; Solar Installation.{" "}
-              <span className="animate-gradient bg-gradient-to-r from-indigo via-purple to-cyan bg-clip-text text-transparent">
-                One Trusted Name.
+            <p className="mt-6 font-display text-sm font-semibold uppercase tracking-[0.18em] text-brand-light">
+              {BRAND.name}
+            </p>
+            <h1 className="mt-3 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+              Printer, Laptop &amp; Solar help —{" "}
+              <span className="animate-gradient bg-gradient-to-r from-brand-light via-white to-brand bg-clip-text text-transparent">
+                explained simply.
               </span>
             </h1>
           </MotionDiv>
 
           <MotionDiv delay={0.16}>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-zinc-400 sm:text-lg">
-              From jammed office printers and dead PC motherboards to full rooftop solar
-              installations – we handle these three services only. Certified, insured, and
-              guaranteed.
+              Broken printer? Slow laptop? Need solar panels or inverter repair? We handle these
+              services every day — with clear pricing, home/office visits, and booking by call or
+              WhatsApp.
             </p>
           </MotionDiv>
 
@@ -66,7 +69,7 @@ export function Hero() {
               <a
                 key={pill.href}
                 href={pill.href}
-                className="inline-flex min-h-12 items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 text-sm font-medium text-zinc-200 backdrop-blur-md transition-all duration-200 hover:scale-105 hover:border-cyan/50 hover:bg-white/10 hover:text-white"
+                className="inline-flex min-h-12 items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 text-sm font-medium text-zinc-200 backdrop-blur-md transition-all duration-200 hover:scale-105 hover:border-brand-light/50 hover:bg-white/10 hover:text-white"
               >
                 <span aria-hidden>{pill.emoji}</span>
                 {pill.label}
@@ -77,15 +80,15 @@ export function Hero() {
           <MotionDiv delay={0.3} className="mt-8 flex flex-wrap gap-4">
             <a
               href="#contact"
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-r from-indigo to-cyan px-7 text-sm font-semibold text-white shadow-lg shadow-indigo/40 transition-all duration-200 hover:scale-105 hover:shadow-xl hover:shadow-cyan/40"
+              className="inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-light px-7 text-sm font-semibold text-white shadow-lg shadow-brand/40 transition-all duration-200 hover:scale-105 hover:shadow-xl hover:shadow-brand-light/40"
             >
-              Get a Free Quote
+              Book a Service
             </a>
             <a
-              href="#printer-repair"
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/20 bg-white/5 px-7 text-sm font-semibold text-white backdrop-blur-md transition-all duration-200 hover:scale-105 hover:border-cyan/50 hover:bg-white/10"
+              href="#services"
+              className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/20 bg-white/5 px-7 text-sm font-semibold text-white backdrop-blur-md transition-all duration-200 hover:scale-105 hover:border-brand-light/50 hover:bg-white/10"
             >
-              Learn More
+              See Our Services
             </a>
           </MotionDiv>
         </div>
@@ -107,15 +110,15 @@ export function Hero() {
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
             >
               <p className="text-xs text-zinc-400">Avg. turnaround</p>
-              <p className="text-lg font-bold text-cyan">24 Hours</p>
+              <p className="text-lg font-bold text-brand-light">24 Hours</p>
             </motion.div>
 
-            <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-indigo/40 via-purple/20 to-cyan/30 blur-2xl" />
+            <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-brand/40 via-brand-dark/20 to-brand-light/30 blur-2xl" />
 
-            <div className="relative h-full overflow-hidden rounded-[2rem] border border-white/15 shadow-2xl shadow-indigo/20">
+            <div className="relative h-full overflow-hidden rounded-[2rem] border border-white/15 shadow-2xl shadow-brand/20">
               <Image
                 src="/hero-technician.jpg"
-                alt="AB Computer Technologies technician repairing hardware"
+                alt="AB Computer Technologies technician repairing hardware in Multan"
                 fill
                 priority
                 className="object-cover"
@@ -128,14 +131,14 @@ export function Hero() {
               <div className="relative aspect-[16/7]">
                 <Image
                   src="/images/solar-technician.jpg"
-                  alt="Solar installation service"
+                  alt="Solar panel installation service by AB Computer Technologies"
                   fill
                   className="object-cover object-top"
                   sizes="40vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-indigo/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-brand/50 to-transparent" />
                 <p className="absolute bottom-3 left-3 text-xs font-semibold uppercase tracking-wider text-white">
-                  Printer · PC · Solar
+                  Printer · Laptop · Solar
                 </p>
               </div>
             </div>

@@ -31,10 +31,10 @@ import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
 import { WHATSAPP_MESSAGES } from "./config";
 
 const FEATURES = [
-  "Motherboard & component-level repair",
-  "SSD upgrades & performance tuning",
-  "Screen, keyboard & hinge replacement",
-  "Data recovery & virus removal",
+  "Won't turn on, blank screen, or overheating",
+  "Slow performance and storage upgrades",
+  "Broken screen, keyboard, or hinge",
+  "Virus cleanup and data recovery help",
 ];
 
 const HEADING_WORDS = ["Expert", "PC", "&", "Laptop", "Repair"];
@@ -75,15 +75,15 @@ export function PcRepairSection({
 
       {/* Floating orbs */}
       <motion.div
-        className="pointer-events-none absolute -right-20 top-20 h-72 w-72 rounded-full bg-[#7c3aed]/40 blur-3xl"
+        className="pointer-events-none absolute -right-20 top-20 h-72 w-72 rounded-full bg-brand/40 blur-3xl"
         {...orbDrift(9)}
       />
       <motion.div
-        className="pointer-events-none absolute bottom-10 left-1/4 h-56 w-56 rounded-full bg-[#06b6d4]/30 blur-3xl"
+        className="pointer-events-none absolute bottom-10 left-1/4 h-56 w-56 rounded-full bg-brand-light/30 blur-3xl"
         {...orbDrift(11)}
       />
       <motion.div
-        className="pointer-events-none absolute right-1/3 top-1/2 h-40 w-40 rounded-full bg-[#4f46e5]/35 blur-3xl"
+        className="pointer-events-none absolute right-1/3 top-1/2 h-40 w-40 rounded-full bg-brand-dark/35 blur-3xl"
         animate={{ scale: [1, 1.25, 1], opacity: [0.35, 0.6, 0.35] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -100,20 +100,20 @@ export function PcRepairSection({
           <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm sm:p-10">
             <motion.span
               variants={wordReveal}
-              className="inline-flex rounded-full border border-indigo-400/30 bg-indigo-500/10 px-3 py-1 text-xs font-semibold tracking-widest text-[#a5b4fc] backdrop-blur-md"
+              className="inline-flex rounded-full border border-brand-light/30 bg-brand/10 px-3 py-1 text-xs font-semibold tracking-widest text-brand-light backdrop-blur-md"
             >
               02. COMPUTERS
             </motion.span>
 
             <motion.h2
-              className="mt-5 flex flex-wrap gap-x-3 gap-y-1 text-4xl font-bold tracking-tight md:text-6xl"
+              className="mt-5 flex flex-wrap gap-x-3 gap-y-1 font-display text-4xl font-bold tracking-tight md:text-6xl"
               variants={staggerContainer}
             >
               {HEADING_WORDS.map((word) => (
                 <motion.span
                   key={word}
                   variants={wordReveal}
-                  className="bg-gradient-to-r from-[#4f46e5] to-[#7c3aed] bg-clip-text text-transparent"
+                  className="bg-gradient-to-r from-brand-light to-white bg-clip-text text-transparent"
                 >
                   {word}
                 </motion.span>
@@ -124,8 +124,8 @@ export function PcRepairSection({
               variants={wordReveal}
               className="mt-5 text-base leading-relaxed text-zinc-300 sm:text-lg"
             >
-              Focus. Plan. Execute. Board-level motherboard repair, SSD upgrades, screen
-              replacement, and secure data recovery — clear estimates before we touch a screw.
+              From student laptops to office PCs — we diagnose the problem, explain the fix in plain
+              words, and only start work after you approve the estimate.
             </motion.p>
 
             <motion.ul variants={staggerContainer} className="mt-8 space-y-3.5">
@@ -135,7 +135,7 @@ export function PcRepairSection({
                   variants={listItem}
                   className="flex items-center gap-3 text-sm text-zinc-200 sm:text-base"
                 >
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#4f46e5] to-[#06b6d4] text-white shadow-lg shadow-cyan-500/20">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand to-brand-light text-white shadow-lg shadow-brand/20">
                     <CheckIcon />
                   </span>
                   {item}
@@ -148,9 +148,9 @@ export function PcRepairSection({
                 href="#contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="cta-glow-indigo inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-r from-[#4f46e5] to-[#7c3aed] px-8 text-sm font-semibold text-white shadow-[0_0_24px_rgba(79,70,229,0.45)]"
+                className="cta-glow-indigo inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-dark px-8 text-sm font-semibold text-white shadow-[0_0_24px_rgba(26,102,224,0.45)]"
               >
-                Book a PC Repair
+                Book a Laptop Repair
               </motion.a>
               <WhatsAppLink contact="ahsan" message={WHATSAPP_MESSAGES.pc} />
             </motion.div>
@@ -165,27 +165,26 @@ export function PcRepairSection({
           variants={imageEnterRight}
         >
           <motion.div style={{ y: isDesktop ? imageY : 0 }} className="relative">
-            <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-[#4f46e5]/40 to-[#06b6d4]/30 blur-2xl" />
-            <div className="group relative aspect-[4/3] overflow-hidden rounded-3xl border-2 border-cyan-400/30 shadow-[inset_0_0_40px_rgba(6,182,212,0.12)] sm:aspect-[5/4] lg:min-h-[520px] lg:aspect-auto">
-              {/* TODO: REPLACE THIS IMAGE WITH THE ONE PROVIDED BY THE USER FOR PCs REPAIR */}
+            <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-brand/40 to-brand-light/30 blur-2xl" />
+            <div className="group relative aspect-[4/3] overflow-hidden rounded-3xl border-2 border-brand-light/30 shadow-[inset_0_0_40px_rgba(26,102,224,0.12)] sm:aspect-[5/4] lg:min-h-[520px] lg:aspect-auto">
               {imageSrc ? (
                 <Image
                   src={imageSrc}
-                  alt="Professional technician repairing a laptop at a workshop desk"
+                  alt="Technician repairing a laptop at the AB Computer Technologies workshop"
                   fill
                   className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 1024px) 100vw, 58vw"
                   priority
                 />
               ) : (
-                <div className="flex h-full min-h-[360px] flex-col items-center justify-center gap-4 bg-gradient-to-br from-[#4f46e5]/40 to-[#7c3aed]/50">
+                <div className="flex h-full min-h-[360px] flex-col items-center justify-center gap-4 bg-gradient-to-br from-brand/40 to-brand-dark/50">
                   <MonitorIcon />
                   <span className="text-sm font-semibold tracking-widest text-white/80">
                     PC IMAGE
                   </span>
                 </div>
               )}
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#4f46e5]/25 via-transparent to-[#06b6d4]/15" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-brand/25 via-transparent to-brand-light/15" />
             </div>
 
             <motion.div
@@ -193,8 +192,8 @@ export function PcRepairSection({
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
             >
-              <p className="text-xs text-zinc-400">Emotion</p>
-              <p className="text-sm font-bold text-white">Trust</p>
+              <p className="text-xs text-zinc-400">Promise</p>
+              <p className="text-sm font-bold text-white">Clear estimate first</p>
             </motion.div>
           </motion.div>
         </motion.div>

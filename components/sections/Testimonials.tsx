@@ -13,21 +13,21 @@ import { MotionDiv } from "@/components/ui/MotionDiv";
 const REVIEWS = [
   {
     quote:
-      "Printer SLA response is unreal. Error codes cleared same day, and our print queue has stayed stable for months.",
+      "Our office printer failed mid-day. They came the same day, fixed it, and explained everything simply. Printing has been stable since.",
     name: "Sara Malik",
-    role: "IT Lead, Vertex Co.",
+    role: "Office Manager, Multan",
   },
   {
     quote:
-      "AB Computer Technologies recovered our office fleet after a weekend outage. Transparent pricing and board-level skill we couldn't find elsewhere.",
+      "My laptop stopped turning on before an important deadline. AB Computer Technologies repaired it quickly and kept my files safe.",
     name: "Ayesha Khan",
-    role: "Ops Director, Nexus Labs",
+    role: "University Student",
   },
   {
     quote:
-      "They designed and installed our rooftop solar, then integrated monitoring with our IT stack. One team, zero friction.",
+      "They installed our rooftop solar and later helped with inverter issues. One trusted team for both install and repair.",
     name: "Hassan Ali",
-    role: "Founder, BrightPrint",
+    role: "Homeowner, Multan",
   },
 ];
 
@@ -36,11 +36,11 @@ export function Testimonials() {
     <section id="testimonials" className="bg-background py-24 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <MotionDiv className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-indigo">
-            Testimonials
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+            Customer Stories
           </p>
-          <h2 className="mt-3 text-3xl font-black tracking-tight text-foreground sm:text-4xl">
-            Trusted by teams who can&apos;t afford downtime
+          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            Trusted by homes and businesses across Multan
           </h2>
         </MotionDiv>
 
@@ -72,7 +72,7 @@ function TiltCard({
     springX,
     [-0.5, 0.5],
     [0, 100],
-  )}% ${useTransform(springY, [-0.5, 0.5], [0, 100])}%, rgba(99,102,241,0.18), transparent 50%)`;
+  )}% ${useTransform(springY, [-0.5, 0.5], [0, 100])}%, rgba(26,102,224,0.16), transparent 50%)`;
 
   const onMove = (e: MouseEvent<HTMLDivElement>) => {
     const rect = ref.current?.getBoundingClientRect();
@@ -99,7 +99,7 @@ function TiltCard({
         style={{ background: glare }}
       />
       <div style={{ transform: "translateZ(30px)" }} className="relative">
-        <div className="flex gap-1 text-indigo">
+        <div className="flex gap-1 text-brand">
           {Array.from({ length: 5 }).map((_, i) => (
             <Star key={i} />
           ))}

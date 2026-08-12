@@ -46,11 +46,11 @@ export function FaqSection() {
     <section id="faq" className="relative bg-background py-20 sm:py-24">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <MotionDiv className="text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-indigo">FAQ</p>
-          <h2 className="mt-3 text-3xl font-black tracking-tight text-foreground sm:text-4xl">
-            Questions customers ask{" "}
-            <span className="bg-gradient-to-r from-indigo to-cyan bg-clip-text text-transparent">
-              every day
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">FAQ</p>
+          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            Common questions —{" "}
+            <span className="bg-gradient-to-r from-brand to-brand-light bg-clip-text text-transparent">
+              plain answers
             </span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">
@@ -66,8 +66,8 @@ export function FaqSection() {
                 <div
                   className={`overflow-hidden rounded-2xl border transition-colors duration-200 ${
                     open
-                      ? "border-indigo/30 bg-white shadow-lg shadow-indigo/5"
-                      : "border-gray-100 bg-white/80 hover:border-indigo/20"
+                      ? "border-brand/30 bg-white shadow-lg shadow-brand/5"
+                      : "border-gray-100 bg-white/80 hover:border-brand/20"
                   }`}
                 >
                   <button
@@ -82,7 +82,7 @@ export function FaqSection() {
                     <span
                       className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-all duration-200 ${
                         open
-                          ? "rotate-45 border-indigo bg-indigo text-white"
+                          ? "rotate-45 border-brand bg-brand text-white"
                           : "border-gray-200 text-muted"
                       }`}
                       aria-hidden
@@ -116,7 +116,7 @@ export function FaqSection() {
         <MotionDiv delay={0.15} className="mt-10 text-center">
           <a
             href="#contact"
-            className="inline-flex min-h-12 items-center justify-center rounded-full border border-indigo/30 px-7 text-sm font-semibold text-indigo transition-all duration-200 hover:scale-105 hover:bg-indigo hover:text-white"
+            className="inline-flex min-h-12 items-center justify-center rounded-full border border-brand/30 px-7 text-sm font-semibold text-brand transition-all duration-200 hover:scale-105 hover:bg-brand hover:text-white"
           >
             Still have a question? Contact us
           </a>

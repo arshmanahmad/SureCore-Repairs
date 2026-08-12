@@ -15,23 +15,26 @@ import {
 const COLUMNS = [
   {
     title: "Services",
-    links: OFFERED_SERVICES.map((s) => ({ label: s.label, href: s.href })),
+    links: [
+      ...OFFERED_SERVICES.map((s) => ({ label: s.label, href: s.href })),
+      { label: "Printer Types", href: "#printers" },
+    ],
   },
   {
     title: "Company",
     links: [
-      { label: "Stories", href: "#stories" },
+      { label: "Our Services", href: "#services" },
       { label: "Pricing", href: "#pricing" },
       { label: "Service Area", href: "#service-area" },
       { label: "FAQ", href: "#faq" },
-      { label: "Get a Quote", href: "#contact" },
+      { label: "Book a Service", href: "#contact" },
     ],
   },
 ];
 
 const PHONE_CONTACTS: { id: ContactId; note: string }[] = [
-  { id: "asmeer", note: "Printer · Solar" },
-  { id: "ahsan", note: "PC / Computer" },
+  { id: "asmeer", note: "Printer · Solar · Inverter" },
+  { id: "ahsan", note: "PC / Laptop" },
 ];
 
 export function Footer() {
@@ -42,8 +45,9 @@ export function Footer() {
           <div>
             <Logo theme="dark" />
             <p className="mt-4 max-w-sm text-sm leading-relaxed">
-              We offer exactly three services: printer repair, PC &amp; laptop repair, and solar
-              installation — with enterprise-grade care and startup speed.
+              AB Computer Technologies helps Multan homes and businesses with printer repair,
+              PC &amp; laptop repair, solar inverter repair, and solar panel installation —
+              explained in plain language, booked by call or WhatsApp.
             </p>
           </div>
 
@@ -55,7 +59,7 @@ export function Footer() {
               <ul className="mt-4 space-y-3">
                 {column.links.map((link) => (
                   <li key={link.label}>
-                    <a href={link.href} className="text-sm transition-colors hover:text-cyan">
+                    <a href={link.href} className="text-sm transition-colors hover:text-brand-light">
                       {link.label}
                     </a>
                   </li>
@@ -77,7 +81,7 @@ export function Footer() {
                     <p className="text-[11px] uppercase tracking-wider text-zinc-500">{item.note}</p>
                     <a
                       href={person.tel}
-                      className="mt-1 block text-sm transition-colors hover:text-cyan"
+                      className="mt-1 block text-sm transition-colors hover:text-brand-light"
                     >
                       {person.phoneDisplay}
                     </a>
@@ -94,7 +98,7 @@ export function Footer() {
                 );
               })}
               <li>
-                <a href="#contact" className="text-sm transition-colors hover:text-cyan">
+                <a href="#contact" className="text-sm transition-colors hover:text-brand-light">
                   Book on-site visit
                 </a>
               </li>
@@ -103,8 +107,10 @@ export function Footer() {
         </MotionDiv>
 
         <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-8 text-sm sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} {BRAND.name}. All rights reserved.</p>
-          <p className="text-zinc-500">Printer Repair · PC Repair · Solar Installation</p>
+          <p>
+            © {new Date().getFullYear()} {BRAND.name}. All rights reserved.
+          </p>
+          <p className="text-zinc-500">Printer Repair · Laptop Repair · Solar &amp; Inverter</p>
         </div>
       </div>
     </footer>

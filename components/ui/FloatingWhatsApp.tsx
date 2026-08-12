@@ -11,8 +11,8 @@ import {
 } from "@/components/sections/config";
 
 const OPTIONS: { id: ContactId; note: string }[] = [
-  { id: "asmeer", note: "Printer · Solar" },
-  { id: "ahsan", note: "PC / Computer" },
+  { id: "asmeer", note: "Printer · Solar · Inverter" },
+  { id: "ahsan", note: "PC / Laptop" },
 ];
 
 export function FloatingWhatsApp() {
@@ -115,7 +115,7 @@ export function FloatingWhatsApp() {
         transition={{ delay: 0.4, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
         whileHover={{ scale: 1.06 }}
         whileTap={{ scale: 0.96 }}
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_10px_30px_rgba(37,211,102,0.45),0_0_0_6px_rgba(37,211,102,0.12)] transition-shadow hover:shadow-[0_14px_36px_rgba(37,211,102,0.55),0_0_0_8px_rgba(99,102,241,0.18)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#25D366]"
+        className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_10px_30px_rgba(37,211,102,0.45),0_0_0_6px_rgba(37,211,102,0.12)] transition-shadow hover:shadow-[0_14px_36px_rgba(37,211,102,0.55),0_0_0_8px_rgba(26,102,224,0.18)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#25D366]"
       >
         {open ? <CloseIcon /> : <WhatsAppIcon className="h-7 w-7" />}
       </motion.button>

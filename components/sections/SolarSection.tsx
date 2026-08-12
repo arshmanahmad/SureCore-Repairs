@@ -15,13 +15,13 @@ import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
 import { WHATSAPP_MESSAGES } from "./config";
 
 const FEATURES = [
-  "Certified site surveys & permitting",
-  "Grid-tied and off-grid systems",
-  "Battery storage integration",
-  "Incentive & rebate guidance",
+  "Solar panel installation for homes & shops",
+  "Solar inverter repair and checkup",
+  "Site survey with simple savings explanation",
+  "Battery backup options when needed",
 ];
 
-const HEADING_WORDS = ["Switch", "to", "Solar", "&", "Save", "Big"];
+const HEADING_WORDS = ["Solar", "Panels", "&", "Inverter", "Repair"];
 
 type SolarSectionProps = {
   imageSrc?: string;
@@ -118,14 +118,14 @@ export function SolarSection({
             </motion.span>
 
             <motion.h2
-              className="mt-5 flex flex-wrap gap-x-3 gap-y-1 text-4xl font-bold tracking-tight md:text-6xl"
+              className="mt-5 flex flex-wrap gap-x-3 gap-y-1 font-display text-4xl font-bold tracking-tight md:text-6xl"
               variants={staggerContainer}
             >
               {HEADING_WORDS.map((word) => (
                 <motion.span
                   key={word}
                   variants={wordReveal}
-                  className="bg-gradient-to-r from-[#059669] to-[#10b981] bg-clip-text text-transparent"
+                  className="bg-gradient-to-r from-emerald-400 to-brand-light bg-clip-text text-transparent"
                 >
                   {word}
                 </motion.span>
@@ -136,8 +136,8 @@ export function SolarSection({
               variants={wordReveal}
               className="mt-5 text-base leading-relaxed text-zinc-300 sm:text-lg"
             >
-              Certified site surveys, permitting, grid-tied and off-grid solutions, battery
-              storage integration, and guidance on government incentives — end to end.
+              Need new solar panels installed — or an existing inverter repaired? We explain options
+              in everyday language, survey your site, and complete the work carefully.
             </motion.p>
 
             <motion.ul variants={staggerContainer} className="mt-8 space-y-3.5">
@@ -160,9 +160,9 @@ export function SolarSection({
                 href="#contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="cta-glow-emerald inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-r from-[#059669] to-[#10b981] px-8 text-sm font-semibold text-white shadow-[0_0_24px_rgba(5,150,105,0.45)]"
+                className="cta-glow-emerald inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-r from-emerald-600 to-brand px-8 text-sm font-semibold text-white shadow-[0_0_24px_rgba(5,150,105,0.45)]"
               >
-                Explore Solar Options
+                Request Solar Help
               </motion.a>
               <WhatsAppLink contact="asmeer" message={WHATSAPP_MESSAGES.solar} />
             </motion.div>
@@ -194,8 +194,8 @@ export function SolarSection({
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
             >
-              <p className="text-xs text-zinc-400">Emotion</p>
-              <p className="text-sm font-bold text-[#eab308]">Sustainability</p>
+              <p className="text-xs text-zinc-400">Includes</p>
+              <p className="text-sm font-bold text-[#eab308]">Panels &amp; inverters</p>
             </motion.div>
           </motion.div>
         </motion.div>

@@ -5,16 +5,25 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Logo } from "@/components/ui/Logo";
 import { OFFERED_SERVICES } from "./config";
 
-/** Every major page section — keep in scroll order */
+/** Major page sections — keep in scroll order */
 const LINKS = [
-  { label: "Stories", href: "#stories" },
+  { label: "Services", href: "#services" },
   ...OFFERED_SERVICES.map((s) => ({ label: s.shortLabel, href: s.href })),
+  { label: "Printer Types", href: "#printers" },
   { label: "Pricing", href: "#pricing" },
   { label: "Area", href: "#service-area" },
-  { label: "Reviews", href: "#testimonials" },
   { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ] as const;
+
+const COMPACT_HREFS = [
+  "#services",
+  "#printer-repair",
+  "#pc-repair",
+  "#solar",
+  "#pricing",
+  "#contact",
+];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -35,7 +44,6 @@ export function Navbar() {
     };
   }, [open]);
 
-  // Highlight the section currently in view
   useEffect(() => {
     const ids = ["home", ...LINKS.map((l) => l.href.slice(1))];
     const elements = ids
@@ -62,11 +70,9 @@ export function Navbar() {
   }, []);
 
   const linkIdle = scrolled
-    ? "text-zinc-600 hover:text-indigo"
+    ? "text-zinc-600 hover:text-brand"
     : "text-zinc-300 hover:text-white";
-  const linkActive = scrolled
-    ? "text-indigo"
-    : "text-white";
+  const linkActive = scrolled ? "text-brand" : "text-white";
 
   return (
     <motion.header
@@ -79,21 +85,17 @@ export function Navbar() {
           : "border-b border-white/5 bg-dark/55 py-4 backdrop-blur-lg"
       }`}
     >
-      {/* Soft brand glow along the bar when over the dark hero */}
       {!scrolled ? (
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan/50 to-transparent"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-brand-light/50 to-transparent"
         />
       ) : null}
 
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
         <Logo theme={scrolled ? "light" : "dark"} />
 
-        <nav
-          className="hidden items-center gap-0.5 xl:flex"
-          aria-label="Primary"
-        >
+        <nav className="hidden items-center gap-0.5 xl:flex" aria-label="Primary">
           {LINKS.map((link) => {
             const active = activeHref === link.href;
             return (
@@ -108,9 +110,7 @@ export function Navbar() {
                 {active ? (
                   <motion.span
                     layoutId="nav-active"
-                    className={`absolute inset-x-2 -bottom-0.5 h-0.5 rounded-full bg-gradient-to-r from-indigo via-purple to-cyan ${
-                      scrolled ? "opacity-100" : "opacity-90"
-                    }`}
+                    className="absolute inset-x-2 -bottom-0.5 h-0.5 rounded-full bg-gradient-to-r from-brand to-brand-light"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 ) : null}
@@ -119,16 +119,11 @@ export function Navbar() {
           })}
         </nav>
 
-        {/* Compact nav for lg–xl when full list doesn't fit */}
         <nav
           className="hidden items-center gap-0.5 lg:flex xl:hidden"
           aria-label="Primary compact"
         >
-          {LINKS.filter((l) =>
-            ["#stories", "#printer-repair", "#pc-repair", "#solar", "#pricing", "#faq", "#contact"].includes(
-              l.href,
-            ),
-          ).map((link) => {
+          {LINKS.filter((l) => COMPACT_HREFS.includes(l.href)).map((link) => {
             const active = activeHref === link.href;
             return (
               <a
@@ -142,7 +137,7 @@ export function Navbar() {
                 {active ? (
                   <motion.span
                     layoutId="nav-active-compact"
-                    className="absolute inset-x-1.5 -bottom-0.5 h-0.5 rounded-full bg-gradient-to-r from-indigo to-cyan"
+                    className="absolute inset-x-1.5 -bottom-0.5 h-0.5 rounded-full bg-gradient-to-r from-brand to-brand-light"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 ) : null}
@@ -153,14 +148,14 @@ export function Navbar() {
 
         <a
           href="#contact"
-          className="group relative hidden min-h-11 overflow-hidden rounded-full bg-gradient-to-r from-indigo via-purple to-cyan p-[1px] shadow-lg shadow-indigo/25 transition-transform duration-200 hover:scale-[1.03] hover:shadow-xl hover:shadow-cyan/30 md:inline-flex"
+          className="group relative hidden min-h-11 overflow-hidden rounded-full bg-gradient-to-r from-brand to-brand-light p-[1px] shadow-lg shadow-brand/25 transition-transform duration-200 hover:scale-[1.03] hover:shadow-xl hover:shadow-brand-light/30 md:inline-flex"
         >
-          <span className="relative inline-flex min-h-[42px] items-center justify-center rounded-full bg-gradient-to-r from-indigo to-cyan px-5 text-sm font-semibold text-white">
+          <span className="relative inline-flex min-h-[42px] items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-dark px-5 text-sm font-semibold text-white">
             <span
               aria-hidden
               className="absolute inset-0 translate-x-[-120%] bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-500 group-hover:translate-x-[120%]"
             />
-            Get a Quote
+            Book Now
           </span>
         </a>
 
@@ -168,8 +163,8 @@ export function Navbar() {
           type="button"
           className={`inline-flex h-11 w-11 items-center justify-center rounded-xl border transition-all duration-200 lg:hidden ${
             scrolled
-              ? "border-zinc-200 bg-white/80 text-foreground hover:border-indigo/40 hover:text-indigo"
-              : "border-white/15 bg-white/5 text-white hover:border-cyan/50 hover:text-cyan"
+              ? "border-zinc-200 bg-white/80 text-foreground hover:border-brand/40 hover:text-brand"
+              : "border-white/15 bg-white/5 text-white hover:border-brand-light/50 hover:text-brand-light"
           }`}
           aria-expanded={open}
           aria-label={open ? "Close menu" : "Open menu"}
@@ -199,8 +194,8 @@ export function Navbar() {
                   onClick={() => setOpen(false)}
                   className={`rounded-xl px-4 py-3 text-base font-medium transition-colors ${
                     activeHref === link.href
-                      ? "bg-gradient-to-r from-indigo/10 to-cyan/10 text-indigo"
-                      : "text-foreground hover:bg-indigo/5 hover:text-indigo"
+                      ? "bg-gradient-to-r from-brand/10 to-brand-light/10 text-brand"
+                      : "text-foreground hover:bg-brand/5 hover:text-brand"
                   }`}
                 >
                   {link.label}
@@ -209,9 +204,9 @@ export function Navbar() {
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="mt-2 inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-r from-indigo via-purple to-cyan font-semibold text-white shadow-lg shadow-indigo/25"
+                className="mt-2 inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-light font-semibold text-white shadow-lg shadow-brand/25"
               >
-                Get a Quote
+                Book Now
               </a>
             </div>
           </motion.div>
